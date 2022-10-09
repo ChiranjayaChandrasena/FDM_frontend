@@ -1,5 +1,9 @@
 import React,{Component} from "react";
 
+
+
+
+
 export default function AddDetails(){
     return(
         <div style={{paddingLeft:552, paddingTop:100}}>
@@ -17,12 +21,12 @@ export default function AddDetails(){
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Gender</label>
                     <div class="form-check form-check-inline" style={{paddingLeft:50}}>
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="option1"/>
-                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                        <input class="form-check-input" type="radio" name="male" id="male" value="1"/>
+                        <label class="form-check-label">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="option2"/>
-                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                        <input class="form-check-input" type="radio" name="female" id="female" value="2"/>
+                        <label class="form-check-label">Female</label>
                     </div>
                 </div>
                 
@@ -41,23 +45,31 @@ export default function AddDetails(){
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Diabetes patient</label>
                     <div class="form-check form-check-inline" style={{paddingLeft:50}}>
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="diabetesYes" value="option1"/>
-                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        <input class="form-check-input" type="radio" name="diabetesYes" id="diabetesYes" value="1"/>
+                        <label class="form-check-label">Yes</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="diabetesNo" value="option2"/>
-                        <label class="form-check-label" for="inlineRadio2">No</label>
+                        <input class="form-check-input" type="radio" name="diabetesNo" id="diabetesNo" value="2"/>
+                        <label class="form-check-label">No</label>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Smoker</label>
                     <div class="form-check form-check-inline" style={{paddingLeft:50}}>
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="smokerYes" value="option1"/>
-                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        <input class="form-check-input" type="radio" name="smoker1" id="smoker1" value="1"/>
+                        <label class="form-check-label">1</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="smokerNo" value="option2"/>
-                        <label class="form-check-label" for="inlineRadio2">No</label>
+                        <input class="form-check-input" type="radio" name="smoker2" id="smoker2" value="2"/>
+                        <label class="form-check-label">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="smoker3" id="smoker3" value="3"/>
+                        <label class="form-check-label">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="smoker4" id="smoker4" value="4"/>
+                        <label class="form-check-label">4</label>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
