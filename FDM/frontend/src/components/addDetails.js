@@ -1,16 +1,16 @@
 import React,{useState} from "react";
 var bg = require('../bg1.jpg');
 
-const styles = {
-    main: {
-        backgroundImage: `url(${bg})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh'
-    }
-};
+// const styles = {
+//     main: {
+//         backgroundImage: `url(${bg})`,
+//         backgroundPosition: 'center',
+//         backgroundSize: 'cover',
+//         backgroundRepeat: 'no-repeat',
+//         width: '100vw',
+//         height: '100vh'
+//     }
+// };
 
 export default function AddDetails(){
 
@@ -21,6 +21,7 @@ export default function AddDetails(){
     const [diabetes, setDiabetes] = useState("");
     const [smoking, setSmoking] = useState("");
     const [output, setOutput] = useState("");
+    const [resultColor, setResultColor] = useState("");
 
     function sendData(e) {
         e.preventDefault();
@@ -34,6 +35,21 @@ export default function AddDetails(){
         smoking : smoking
     }
 
+
+    function generateResult(data){
+        if(data === 0){
+            setResultColor("blue")
+            setOutput("There is no risk of cardiovascular disease in the next ten years")
+        }
+        else if (data === 1){
+            setResultColor("red")
+            setOutput("There is high risk of cardiovascular disease in the next ten years")
+        }
+        else{
+            setOutput("Server error")
+        }
+        
+    }
    
         // Simple POST request with a JSON body using fetch
         const requestOptions = {
@@ -46,7 +62,7 @@ export default function AddDetails(){
           requestOptions
         )
           .then((response) => response.json())
-          .then((data) => setOutput(data));
+          .then((data) =>  generateResult(data));
     }
 
 
@@ -196,7 +212,7 @@ export default function AddDetails(){
                 <div class="card bg-light mb-3 " style={{width:560}}>
                     <div className="card-header text-center font-weight-bold" style={{backgroundColor: '#8AE7C5'}}>Result</div>
                      <div className="card-body" style={{minHeight:45, backgroundColor: '#D1F1E6'}}>
-                        <p className="card-text text-center">{output}</p>
+                        <p className="card-text text-center" style={{color: resultColor}}>{output}</p>
                      </div>
                 </div>      
             </div>   
