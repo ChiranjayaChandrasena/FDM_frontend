@@ -1,4 +1,16 @@
 import React,{useState} from "react";
+var bg = require('../bg1.jpg');
+
+const styles = {
+    main: {
+        backgroundImage: `url(${bg})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh'
+    }
+};
 
 export default function AddDetails(){
 
@@ -39,10 +51,15 @@ export default function AddDetails(){
 
 
     return(
-        <div style={{marginTop:50}}>
-
+        
+        <div style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh'}}>
+            <div style={{margin:'auto', backgroundColor: 'rgba(180, 232, 217, 0.5)', width: '45%'}}>
             <div className="d-flex justify-content-center">
-                <h1 className="display-5"> Cardiovascular Risk Assessment</h1>
+                <h1 style={{color: '#6668ff', paddingBottom: '4%', fontSize: 30, paddingTop: '4%', fontWeight: 'bolder'}}> CARDIOVASCULAR RISK ASSESSMENT</h1>
             </div>
 
             <div class="form-group" className="d-flex justify-content-center">
@@ -168,21 +185,24 @@ export default function AddDetails(){
                     </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" style={{width: '86%', marginTop: 15}}>SUBMIT</button>
+                    <div style={{marginTop:25}}></div>
+                    <button type="submit" class="btn btn-outline-primary" style={{width: '86%'}}>RESET</button>
                 
                 </form>
             </div>
             
             <div className="d-flex justify-content-center" style={{marginTop:40}}>
                 <div class="card bg-light mb-3 " style={{width:560}}>
-                    <div className="card-header text-center font-weight-bold">Result</div>
-                     <div className="card-body" style={{minHeight:45}}>
+                    <div className="card-header text-center font-weight-bold" style={{backgroundColor: '#8AE7C5'}}>Result</div>
+                     <div className="card-body" style={{minHeight:45, backgroundColor: '#D1F1E6'}}>
                         <p className="card-text text-center">{output}</p>
                      </div>
                 </div>      
             </div>   
-
+            </div>
         </div>
+       
         
     )
 }
